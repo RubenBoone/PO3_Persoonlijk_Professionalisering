@@ -1,0 +1,23 @@
+<script>
+    var myNum = 2/3
+    var multiplier = 100;
+    var a = Math.round(myNum * multiplier) / multiplier;
+    var b = Math.ceil(myNum * multiplier) / multiplier;
+    var c = Math.floor(myNum * multiplier) / multiplier;
+    document.write(a + " " + b + " " + c + "<br>")
+
+    var myNum = 10000/3
+    var multiplier = 1/100;
+    var a = Math.round(myNum * multiplier) / multiplier;
+    var b = Math.ceil(myNum * multiplier) / multiplier;
+    var c = Math.floor(myNum * multiplier) / multiplier;
+    document.write(a + " " + b + " " + c + "<br>")
+
+    var n = 2;
+    var a = 5.4
+    var result = (a << n) === Math.floor(a) * Math.pow(2, n)
+    document.write(result)
+    a = -256.67
+    result1 = (a >>> n) === Math.floor(Math.floor(a) / Math.pow(2,n))
+    document.write(" " + result1)
+</script>

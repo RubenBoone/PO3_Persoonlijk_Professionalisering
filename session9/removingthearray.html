@@ -1,0 +1,58 @@
+<script>
+    var array = [1,2,3,4]
+    array.shift()
+    document.write(array + "<br>")
+
+    var array = [1,2,3,4]
+    array.unshift(5)
+    document.write(array + "<br>")
+
+    var array = [1,2,3]
+    array.pop()
+    document.write(array  + "<br>")
+
+    var array = [1,2,3]
+    array.push(6)
+    document.write(array  + "<br>")
+
+    var array = [1,2,3,4]
+    array.splice(1,2)
+    document.write(array  + "<br>")
+
+    var array = [1,2,3,4]
+    array.splice(1,2)
+    document.write(array  + "<br>")
+
+    var array = [1,2,3,4,5]
+    document.write(array.length  + "<br>"); // 5
+    delete array[2]
+    document.write(array  + "<br>");
+
+    var array = [1,2,3,4]
+    document.write(Math.min.apply(null, array)  + " " + Math.max.apply(null, array) + "<br>")
+
+    var values = [1,2,3,4,5,3]
+    var i = values.indexOf(3);
+    if (i >= 0){
+        values.splice(i, 1);
+    }
+    document.write(values + "<br>")
+
+    var letters = ["a", "b", "c"]
+    for(const[index, element] of letters.entries()){
+        document.write(index, element);
+    }
+    document.write("<br>");
+
+    var object = {
+        key1: 10,
+        key2: 3,
+        key3: 40,
+        key4: 20
+    }
+    var array = []
+    for (var people in object){
+        array.push([people, object[people]])
+    }
+    document.write(array)
+</script>

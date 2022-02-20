@@ -1,0 +1,28 @@
+<script>
+    function firstChar(stringIn){
+        console.log("The first action of the first char function");
+        return stringIn.charAt(0)
+        console.log("The last action of the first char function");
+    }
+    console.log(firstChar("JS"));
+
+    //accept function as argument
+    function transform(fn, arr){
+        let result = []
+        for (let el of arr){
+            result.push(fn(el))
+        }
+        return result
+    }
+    console.log(transform(x => x *2, [1,2,3,4]));
+    
+    //classes
+    class MyClass {
+        constructor(option) {
+            console.log(`Creating instance using ${option} option.`);
+            this.option = option;
+        }
+    }
+
+    const foo = new MyClass('speedy');
+</script>

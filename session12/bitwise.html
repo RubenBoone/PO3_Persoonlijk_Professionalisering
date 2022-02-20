@@ -1,0 +1,15 @@
+<script>
+    function simulateEvent(numEvents) {
+        var event = Math.floor(numEvents * Math.random())
+        return event
+    }
+    document.write("Rolled a " + (simulateEvent(6)+1) + "<br>");
+
+    function clamp(min, max, val){
+        return Math.min(Math.max(min, +val), max)
+    }
+    document.write(clamp(-10, 10, "4.30") + "<br>") //4.3
+    document.write(clamp(-10, 10, -8) + "<br>") //-8
+    document.write(clamp(-10, 10, 12) + "<br>") //10
+    document.write(clamp(-10, 10, -15) + "<br>") //-10
+</script>

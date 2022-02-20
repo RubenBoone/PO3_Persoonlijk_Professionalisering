@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<script>
+    var a = "hello";
+    var b = "wordl";
+    document.write(a.localeCompare(b));
+    function strcmp(a, b) {
+        if (a === b) {
+            return 0;
+        }
+        if (a > b) {
+            return 1;
+        }
+        return -1;
+    }
+
+    console.log(strcmp("hello", "world"));
+    console.log(strcmp("hello", "hello"));
+    console.log(strcmp("world", "hello"));
+
+    var arr = ["bananas", "cranberries", "apples"];
+
+    arr.sort(function(a,b){
+        return a.localeCompare(b);
+    });
+
+    document.write(arr);
+</script>
+</html>

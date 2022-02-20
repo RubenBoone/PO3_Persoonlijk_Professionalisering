@@ -1,0 +1,103 @@
+<script>
+    //get with no param
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200){
+        //parse the response in
+        xhttp.responseText;
+        }
+    }
+
+    xhttp.open("GET", "ajax_info.txt", true);
+    xhttp.send()
+
+    fetch("/session18/").then(response => response.text()).then(text => {
+        console.log("The homepage is " + text.length + " charachters long.");
+    })
+
+    //post
+    const requestData = {method: "getUsers"};
+    const userPromise = fetch("/api", {
+        method: "POST", body: JSON.stringify(requestData)
+    }).then(response => {
+        if (!response.ok){
+            throw new Error("Got non-2XX response from API server")
+        }
+        return response.json()
+    }).then(responseData => {
+        return responseData.users
+    })
+
+    userPromise.then(users => {
+        console.log("Known users: ", users);
+    }, error => {
+        console.error("Failed to fetch users due to error: ", error)
+    })
+
+    //enum variable
+    var ColorsEnum = {
+        WHITE: 0,
+        GRAY: 1,
+        BLACK: 2
+    }
+    Object.freeze(ColorsEnum);
+    //define the variable and assign a value
+    var color = ColorsEnum.BLACK
+    if (color == ColorsEnum.BLACK){
+        console.log(color) // prints 2
+    }
+    var ce = ColorsEnum
+    for (var name in ce){
+        if (ce[name] == ce.BLACK){
+            console.log(name); // pritns BLACK
+        }
+    }
+
+    //automatic enum value
+    var testEnum = function(){
+        var enumList = ["One", "Two", "Three"];
+        enumObj = {},
+        enumList.forEach((item, index) => enumObj[item] = index + 1)
+        //do not allow the object to be changed
+        Object.freeze(enumObj)
+        return enumObj
+    }();
+
+    console.log(testEnum.One); // 1 will be logged
+    var x = testEnum.Two
+
+    switch(x){
+        case testEnum.One:
+            console.log("111");
+            break;
+        case testEnum.Two:
+            console.log("222");
+            break;
+    }
+
+    //clearing map
+    const map = new Map([[1,2], [3,4]])
+    console.log(map.size);
+    map.clear()
+    console.log(map.size);
+    console.log(map.get(1));
+
+    //iterate map
+    const map2 = new Map([[1,2], [3,4]])
+    for (const [key, value] of map2){
+        console.log(`key: ${key}, value: ${value}`);
+    }
+    for (const key of map2.keys()){
+        console.log(key);
+    }
+    for (const value of map2.values()){
+        console.log(value);
+    }
+
+    //get and set map
+    const map3 = new Map();
+    console.log(map3.get(1)); //undefined
+    map3.set(1,2).set(3,4)
+    console.log(map3.get(1)); // 2
+
+</script>

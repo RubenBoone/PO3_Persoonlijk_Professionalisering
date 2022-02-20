@@ -1,0 +1,12 @@
+<script>
+    var arr = [1,2,1,5,9,5]
+    var prev = 
+    arr.reduce((prev, number) => {
+        if (prev.indexOf(number) === -1){
+            prev.push(number)
+        }
+        return prev;
+    }, [])
+
+    console.log(prev)
+</script>

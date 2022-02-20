@@ -1,0 +1,18 @@
+<script>
+    document.write("<center><blockquote><strong><pre><font>")
+
+        var i, j, total
+        for (i = 1; i<=10; i++){
+            for (j = 1; j<=10;j++){
+                total = i*j
+                total = " " + total
+
+                if (total <10) total = " " + total;
+                
+                document.write(total)
+            }
+            document.write("<br>")
+        }
+
+    document.write("</font></pre></strong></blockquote></center>")
+</script>

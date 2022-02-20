@@ -1,0 +1,35 @@
+<script>
+    arr = ["zebras", "dogs", "elephants", "penguins"]
+    arr.sort(function(a,b){
+        return b.length - a.length;
+    });
+    document.write(arr + "<br>")
+
+    arr1=[100,1000,10,10000,1];
+    arr1.sort(function(a,b){
+        return a -b
+    })
+    document.write(arr1 + "<br>")
+
+    arr2 = [10,21,4,15,7,99,0,12]
+    arr2.sort(function(a,b){
+        return (a&1) - (b&1) || a-b
+    })
+    document.write(arr2 + "<br>")
+
+    var dates = [
+        new Date(2007,11,10),
+        new Date(2014,2,21),
+        new Date(2009,6,11),
+    ]
+
+    dates.sort(function(a,b){
+        if (a > b) return -1;
+        if (a < b) return 1;
+        return 0
+    })
+
+    dates.sort(function(a,b){
+        return b-a;
+    })
+</script>

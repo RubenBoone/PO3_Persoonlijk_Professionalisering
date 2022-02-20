@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<script>
+    const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+    const options = { weekday: "long", year: "numeric", month: "long", day: "numeric"};
+    console.log(event.toLocaleDateString("de-DE", options));
+    console.log(event.toLocaleDateString("ar-EG", options));
+    console.log(event.toLocaleDateString("ko-KR", options));
+</script>
+</html>

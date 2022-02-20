@@ -1,0 +1,13 @@
+<script>
+    var str = "Since boolean is native javascript function/const that makes [one optional paramerer] and the filter method also takes a function and passes it the current array item as a parameter, you could read it like the follwoing"
+    var strArray = str.split(" ");
+    var wordsStartWithA = strArray.filter(startsWithLetterA)
+
+    document.write(wordsStartWithA);
+    function startsWithLetterA(str){
+        if (str && str[0].toLowerCase() == "a"){
+            return true
+        }
+        return false
+    }
+</script>

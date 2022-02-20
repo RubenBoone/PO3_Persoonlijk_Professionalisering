@@ -1,0 +1,21 @@
+<script>
+    var vec = {x: 4, y:3}
+    var dir = Math.atan2(vec.y, vec.x)
+    document.write(dir + "<br>")
+
+    var v1 = {x: 10, y:5, z: 7}
+    var v2 = {x: 20, y:10, z:16}
+    var dist = Math.hypot(v2.x - v1.x, v1.y - v2.y, v2.z - v1.z)
+    document.write(dist + "<br>")
+
+    //modify constants
+    const person = {name: "Jhon"}
+    console.log("The name of the person is ", person.name);
+    person.name = "Steve"
+    console.log("The name of the person is ", person.name);
+    person.surname = "Fox"
+    console.log("The name of the person is ", person.name, " and the surname is ", person.surname);
+
+    
+
+</script>

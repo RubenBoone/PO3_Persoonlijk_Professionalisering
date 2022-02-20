@@ -1,0 +1,84 @@
+<script>
+    //shallow cloning
+    var existing = { a: 1, b: 2, c:3}
+    var clone = {}
+
+    for (var prop in existing){
+        if (existing.hasOwnProperty(prop)){
+            clone[prop] = existing[prop]
+        }
+    }
+
+    console.log(clone)
+
+    //iteration to get keys
+    var obj = { 0: "a", 1: 'b', 2: "c"}
+    Object.keys(obj).map(function(key){
+        console.log(key);
+    })
+
+    //object assign
+    var user = {fname: "jhon"};
+    Object.assign(user, {lname: "Doe", age: 39})
+    console.log(user);
+
+    //define prop
+    var obj = {}
+    Object.defineProperty(obj, "foo", {value: "bar"})
+    console.log(obj.foo);
+
+    //get & set
+    var person = {name: "Jhon", surname: "Doe"}
+    Object.defineProperty(person, "fullName", {
+        get: function (value){
+            return this.name + " " + this.surname
+        },
+        set: function (value){
+            [this.name, this.surname] = value.split[" "]
+        }
+    })
+    console.log(person.fullName);
+
+    //convert obj => array
+    var obj = {
+        a :"hello",
+        b : "this is",
+        c: "javascript"
+    }
+    var array = Object.keys(obj).map(function(key){
+        return obj[key]
+    })
+    document.write(array)
+
+    //get own prop
+    var x = {a: 10, b:3}, props;
+    props = Object.getOwnPropertyNames(x);
+    console.log(props);
+
+    //non enumerable
+    var obj = {}
+    Object.defineProperty(obj, "foo", {value: "show", enumerable: true})
+    Object.defineProperty(obj, "var", {value: "hide", enumerable: false})
+    for (var prop in obj){
+        console.log(obj[prop]);
+    }
+
+    //Iterate over object entries
+    const objecti = {
+        one: 1,
+        two: 2,
+        three: 3
+    }
+    Object.entries(objecti)
+
+    for(const [key, value] of Object.entries(objecti)){
+        console.log(key);
+        //one,two,three
+        console.log(value);
+        //1,2,3
+    }
+
+    //iterate object
+    var obj = {0: "a", 1: "b", 2: "c"}
+    console.log(Object.values(obj));
+</script>

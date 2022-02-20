@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<script>
+
+function formatDate(dayOfWeek, day, month, year) {
+
+    var daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov","Dec"];
+    return daysOfWeek[dayOfWeek] + " " + months[month] + " " + day + " " + year;
+
+}
+
+var birthday = new Date(2020, 28 , 01);
+console.log('Foo was born on: ' + formatDate(birthday.getDay(), birthday.getDate(), birthday.getMonth(), birthday.getFullYear()));
+sendToBar(birthday.getTime());
+</script>
+</html>

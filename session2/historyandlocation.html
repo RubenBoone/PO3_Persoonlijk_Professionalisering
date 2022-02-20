@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History and Location</title>
+</head>
+<body>
+    <script>
+        function showCount(){
+        let histCount = history.length;
+        if (history > 5) {
+            alert("You have been busy. You visited " + histCount + " web pages so far.")
+        } else alert("You have been to " + histCount + " Web pages this session.");
+        }
+    </script>
+    <form action="">
+        <input type="button" name="activity" value="My Activity" onclick="showCount()">
+    </form>
+</body>
+</html>

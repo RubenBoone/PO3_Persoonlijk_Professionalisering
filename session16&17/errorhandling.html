@@ -1,0 +1,52 @@
+<script>
+    const expected = true
+    function compare(actual, success, failure){
+        if (actual === expected){
+            return success()
+        } else {
+            return failure()
+        }
+    }
+
+    function onSuccess(){
+        console.log("value was expected");
+    }
+
+    function onFailure(){
+        console.log("Value was unexpected/exceptional");
+    }
+
+    compare(true, onSuccess, onFailure)
+    compare(false, onSuccess, onFailure)
+
+    //stetimeinterva alnd clear in async
+    function waitfunc(){
+        console.log("This will be logged every 5 seconds");
+    }
+
+    var interval = window.setInterval(waitfunc, 5000);
+    //use of ES8
+    window.setTimeout(() => {
+        clearInterval(interval)
+    }, 32000);
+
+    //problem with settimout
+    for (i = 0; i < 3; i++){
+        setTimeout(function(j){
+            console.log(i);
+        }(i), 1000)
+    }
+
+    //order of execution
+    setTimeout(function(){
+        console.log("World");
+    }, 1000)
+    console.log("hello");
+
+    //regex
+    var re = /a/g
+    var result;
+    while ((result = re.exec("barbatbaz") !== null)) {
+        console.log("found '" + result[0] + "' neext exec starts at index '" + re.lastIndex + "'");
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <form action="">
+        <div>
+            Enter a radius of a circle: <input type="text" name="number"><br>
+            <input type="button" value="Find the circumference" onclick="form.result1.value = 2 * Math.PI * form.number.value">
+            <input type="text" name="result1">
+        </div><br>
+        <div>
+            <input type="button" value="Find the square root of the first number" onclick="form.result2.value = Math.sqrt(form.number.value)">
+            <input type="text" name="result2">
+        </div>
+    </form>
+
+    <form action="">
+        <input type="text" name="number" value="0">
+        <input type="text" name="answer" value="0">
+        <input type="button" name="sqrt" value="SqrRt" onclick="form.answer.value = Math.sqrt(form.number.value)">
+        <input type="button" name="square" value="x ^ 2" onclick="form.answer.value = Math.pow(form.number.value, 2)">
+    </form>
+</body>
+<script>
+
+</script>
+</html>

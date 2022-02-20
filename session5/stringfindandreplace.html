@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<script>
+    var string = "Hello, World!";
+    console.log(string.indexOf("o")); // 4
+    console.log(string.indexOf("foo")); //-1
+
+    console.log(string.lastIndexOf("o")); // 8
+    console.log(string.lastIndexOf("foo")); // -1
+
+    console.log(string.includes("Hello")); // True
+    console.log(string.includes("foo")); // False
+
+    string = string.replace("Hello", "Bye");
+    console.log(string); // Bye, World!
+
+    string.replace(/W.{3}d/g, "Universe");
+    console.log(string); // Bye, Universe!
+
+    var string = "heLlo, woRlD!"
+    string = string.replace(/([a-zA-Z])(a-zA-Z)+/g, function(match, g1, g2){
+        return g1.toUppercase() + g2.toLowerCase();
+    });
+
+    console.log(string);
+    console.log("Hellow World".indexOf("Wor")); //7
+    console.log("abc".repeat(3)); //abcabcabc
+    console.log("abc".repeat(0)); // ""
+    console.log("abc".repeat(-1)); // RangeError
+
+    var myString = "abc";
+    var n = 3;
+    console.log(new Array(n + 1).join(myString));
+
+
+</script>
+</html>

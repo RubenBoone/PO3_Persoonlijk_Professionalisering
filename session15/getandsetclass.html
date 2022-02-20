@@ -1,0 +1,105 @@
+<script>
+    class MyClass {
+        constructor(){
+            this.names_ = []
+        }
+        set name(value) {
+            this.names_.push(value)
+        }
+        get name(){
+            return this.names_[this.names_.length-1]
+        }
+    }
+
+    const myClassInstance = new MyClass()
+    myClassInstance.name = "Joe"
+    myClassInstance.name = "Bob"
+    console.log(myClassInstance.name);
+    console.log(myClassInstance.names_);
+
+    //dynamic method names
+    let METADATA = Symbol("metadata");
+    class Car {
+        constructor(make, model) {
+            this.make = make
+            this.model = model
+        }
+        //exaloke using symbols
+        [METADATA](){
+            return {
+                make: this.make,
+                model: this.model
+            }
+        }
+        [1 + 2](){
+            return "three"
+        }
+    }
+
+    let MazdaMPC = new Car("Mazda", "MPV")
+    console.log(MazdaMPC[3]());
+    console.log(MazdaMPC[METADATA]());
+
+
+    //context(this)
+    var person = {
+        name: "Jhon Doe",
+        age:42,
+        gender: "Male",
+        bio: function() {
+            console.log("My name is " + this.name);
+        }
+    }
+
+    person.bio()
+
+    var bio = person.bio
+    bio()
+
+    //hard binding
+    function Person(){
+        console.log("I'm " + this.name)
+    }
+
+    
+    var person0 = {name: "StackOverflow"}
+    var person1 = {name: "Jhon"}
+    var person2 = {name: "Doe"}
+    var person3 = {name: "Ala eddine Jebali"}
+
+    var origin = Person;
+    Person = function(){
+        origin.call(person0)
+    }
+    Person()
+    Person.call(person1)
+    Person.call(person2)
+    Person.call(person3)
+
+    //get and set in es6
+    class Person2 {
+        constructor(fname, lname){
+            this._fname = fname
+            this._lname = lname
+        }
+
+        get fname(){
+            return this._fname
+        }
+
+        set fname(name) {
+            this._fname = name
+        }
+
+        get lname(){
+            return this._lname
+        }
+
+        set lname(name) {
+            this._lname = name
+        }
+    }
+
+    let person5 = new Person2("Jhon", "Doe")
+    console.log(person5.fname, person5.lname);
+</script>

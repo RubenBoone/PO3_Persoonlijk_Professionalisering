@@ -1,0 +1,17 @@
+<script>
+    var array = [{
+        key: "one",
+        value: 1
+    }, {
+        key: "two",
+        value: 2
+    },{
+        key: "three",
+        value: 3
+    }];
+
+    array.reduce(function(obj, current){
+        obj[current.key] = current.value;
+        console.log(obj);
+    }, {})
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="evalform">
+        Enter an expression: <input type="text" name="expr">
+        result: <input type="text" name="result">
+        <input type="button" value="Click me" onclick="compute(this.form)">
+    </form>
+</body>
+<script>
+    function compute(form){
+        form.result.value = eval(form.expr.value);
+    }
+</script>
+</html>

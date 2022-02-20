@@ -1,0 +1,19 @@
+<script>
+    //private data
+    function makeCounter(){
+        var counter = 0
+        return {
+            value: function(){
+                return counter
+            },
+            increment: function () {
+                counter++
+            }
+        }
+    }
+    var a = makeCounter()
+    var b = makeCounter()
+    a.increment()
+    console.log(a.value());
+    console.log(b.value());
+</script>
